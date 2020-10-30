@@ -20,7 +20,6 @@ void polymul_761x761_mod4591(int16_t* h, int16_t* f, int8_t* g){
     fft9(gpad);
     polymul_10x10_153_mr(fpad, gpad);
     ifft9(fpad);
-    // ifft17_mr(fpad, gpad);
     intt17_rader_mr(fpad, gpad);
     mod_reduce(h, gpad);
 }
