@@ -10,7 +10,7 @@ extern void mod_reduce(int16_t* h, int16_t* hpad);
 // input  : int16_t f[761], int8_t g[761]
 // output  : int16_t h[761]
 // h = f * g mod x^761 -x -1 mod 4591
-void polymul_761x761_modp(int16_t* h, int16_t* f, int8_t* g){
+void polymul_761x761_mod4591(int16_t* h, int16_t* f, int8_t* g){
     int16_t fpad[1530], gpad[1530];
     int16_t gg[761];
     ntt17_rader(f, fpad);
