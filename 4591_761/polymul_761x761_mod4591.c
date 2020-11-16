@@ -13,13 +13,13 @@ extern void mod_reduce_761(int16_t* h, int16_t* hpad);
 void polymul_761x761_mod4591(int16_t* h, int16_t* f, int8_t* g){
     int16_t fpad[1530], gpad[1530];
     int16_t gg[761];
-    ntt17_rader(f, fpad);
+    ntt17_rader(fpad, f);
     ntt9(fpad);
     byteToShort_761(gg, g);
-    ntt17_rader(gg, gpad);
+    ntt17_rader(gpad, gg);
     ntt9(gpad);
     polymul_10x10_153_mr(fpad, gpad);
     intt9(fpad);
-    intt17_rader_mr(fpad, gpad);
+    intt17_rader_mr(gpad, fpad);
     mod_reduce_761(h, gpad);
 }
